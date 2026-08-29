@@ -1,3 +1,18 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    display: block;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
 .player-text {
     background-color: #e0f7fa;
     border: 1px solid #b2ebf2;
@@ -8,7 +23,7 @@
     font-size: 14px;
 }
 input {
-    width: 300px;
+    width: 95%;
     padding: 10px;
     margin-top: 10px;
     border: 1px solid #ccc;
@@ -17,13 +32,14 @@ input {
     font-size: 14px;
 }
 textarea {
-    width: 300px;
+    width: 95%;
     padding: 10px;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    resize: vertical;
 }
 button {
     background-color: #4CAF50;
@@ -45,4 +61,6 @@ button {
     border-radius: 5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    height: 400px;
+    overflow-y: auto;
 }

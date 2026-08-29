@@ -39,6 +39,7 @@ def html():
     {design}
   </style>
   <body>
+  <h1>技名を生成してみよう</h1>
   <div class="player-text">
     <form action="/" method="post">
       <input type="text" name="Genre" placeholder="ジャンルを入力してください(例: 攻撃、防御)"><br>
@@ -61,7 +62,8 @@ def html():
           model="gemini-3-flash-preview",
           contents=f"あなたはプロのヒーローものを描いている作家です。ジャンル: {genre_value}\n属性: {attribute_value}\nタイプ: {type_value}\nその他の情報: {info_value}\n\n上記の情報をもとに、技名を10個生成し、マークダウンではなくhtml形式で返してください。情報が技に全く関係ない言葉であれば「すみません、生成できません。」と返してください。また、返答は次のもののようにしてください。{sample_text}。",
       )
-      session["history"].append(f"AI > {response.text}<br>")
+      session["history"].append(
+          f"AI > {response.text}<br>")
       if len(session["history"]) > 10:
         del session["history"][0]
       ai_response = ""
@@ -72,10 +74,11 @@ def html():
           {ai_response}
         </div>
       """
-    except Exception:
+    except Exception as e:
       return f"""{player_text}<br>
         <div class="ai-response">
           System > エラーが発生しました。不要な情報が入っていないか確認の上、再度お試しください。<br>
+          エラー内容: {str(e)}<br>
         </div>
       """
 
