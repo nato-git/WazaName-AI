@@ -28,7 +28,7 @@ def html():
   if "history" in session:
     session["history"] = session["history"]
   else:
-    session["history"] = []
+    session["history"] = ["こんにちは、どのような技を考えていますか？"]
   player_text = f"""
   <head>
     <meta charset="UTF-8">
